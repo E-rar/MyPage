@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio-Page</title>
+    <link rel="stylesheet" href="../assets/scss/style.css">
+</head>
+<body>
+    <!-- Carousel -->
+    <section class="projects">
+    <div id="drag-container">
+      <div id="spin-container">
+        <!-- Add your images (or video) here -->
+        <% results.forEach(elt => { %>
+        
+         <img src=<%=`../${elt.image_url}`%>  alt="" onclick="showModal('<%=elt._id%>')">
+         
+  
+        
+        <% }) %>
+        
+
+    
+    
+        <!-- Text at center of ground -->
+        <p>•</p>
+      </div>
+      <div id="ground"></div>
+    </div>
+    <% results.forEach(elt => { %>
+      <div id='<%=elt._id%>' class='modal'>
+        <h1><%=elt.title%></h1>
+        <div>
+          <img src=<%=`../${elt.image_url}`%> alt="">
+        </div>
+        <a href="javascript:void(0)" class="closebtn"  onclick="hideModal('<%=elt._id%>')" >&times;</a>
+        <h2><%=elt.description%></h2>
+        <div class="buttonContainer">
+          <a id="gitButton" href=<%=elt.git_url%> target="_blank">
+            Git Hub
+          </a>
+          <a id="siteButton" href=<%=elt.page_url%> target="_blank">
+            Page
+          </a>
+        </div>
+      </div> 
+    <% }) %>
+
+    <div id="music-container"></div>
+  </section>
+
+    <!-- Carousel -->
+    <!-- Scripts -->
+    <script src="../assets/js/carousel.js"></script>
+    <!-- Scripts -->
+</body>
+</html>

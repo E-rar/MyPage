@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD</title>
+    <link rel="stylesheet" href="../assets/scss/style.css">
+</head>
+<body>
+    <form action="/new" method="post" class="" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" name="title" id="title" aria-describedby="title">
+        </div>
+        <div class="mb-3">
+            <label for="git_url" class="form-label">git_url</label>
+            <input type="text" class="form-control" name="git_url" id="git_url" aria-describedby="artist">
+        </div>
+        <div class="mb-3">
+            <label for="page_url" class="form-label">page_url</label>
+            <input type="text" class="form-control" name="page_url" id="page_url" aria-describedby="artist">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">description</label>
+            <input type="text" class="form-control" name="description" id="description" aria-describedby="artist">
+        </div>
+        <div class="mb-3">
+            <label for="file" class="form-label">add File</label>
+            <input type="file" class="form-control" name="file" id="file">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+    <div class="modal-container">
+        <input id="modal-toggle" type="checkbox">
+        <label class="modal-btn" for="modal-toggle">Click me</label> 
+        <label class="modal-backdrop" for="modal-toggle"></label>
+        <div class="modal-content">
+          <label class="modal-close" for="modal-toggle">&#x2715;</label>
+          <h2>Modal title</h2><hr />
+          <p>Hello from inside the modal!</p> 
+          <label class="modal-content-btn" for="modal-toggle">OK</label>   
+        </div>          
+      </div>  
+</body>
+</html>

@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,100,400');
+*{
+  margin:0;
+  padding:0;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  height: 100vh;
+  background: #333 url('https://image.ibb.co/n5A2HU/showcase.jpg') no-repeat center center / cover;
+  color: #ccc;
+  background-attachment: fixed;
+  scroll-behavior: smooth;
+  overflow:hidden; 
+}
+.a{
+  text-decoration:none;
+}
+/*===========================typewriter========================*/
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 0 3rem;
+}
+
+h1, h2 {
+  font-weight: 200;
+  margin: 0.4rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #aaa;
+}
+
+/* Cursor */
+.txt-type > .txt {
+  border-right: 0.2rem solid #777;
+}
+
+@media(min-width: 1200px) {
+  h1 {
+    font-size: 5rem;
+  }
+}
+
+@media(max-width: 800px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media(max-width: 500px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+/*===========================Carousel========================*/
+.projects{
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #111;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+          height:105vh;
+          width:105vw;
+          margin:0;
+          padding:0;
+}
+#drag-container, #spin-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateX(-10deg);
+          transform: rotateX(-10deg);
+}
+
+#drag-container img, #drag-container video,#drag-container div img {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 200px;
+  font-size: 50px;
+  text-align: center;
+  -webkit-box-shadow: 0 0 8px #fff;
+          box-shadow: 0 0 8px #fff;
+  -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
+}
+
+#drag-container img:hover, #drag-container video:hover,#drag-container div img:hover {
+  -webkit-box-shadow: 0 0 15px #fffd;
+          box-shadow: 0 0 15px #fffd;
+  -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
+}
+
+#drag-container p {
+  font-family: Serif;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%) rotateX(90deg);
+          transform: translate(-50%,-50%) rotateX(90deg);
+  color: #fff;
+}
+
+#ground {
+  width: 200px;
+  height: 900px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%) rotateX(90deg);
+          transform: translate(-50%,-50%) rotateX(90deg);
+  background: -webkit-radial-gradient(center center, farthest-side , #9993, transparent);
+}
+
+#music-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@-webkit-keyframes spin {
+  from{
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  } to{
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+@keyframes spin {
+  from{
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  } to{
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+@-webkit-keyframes spinRevert {
+  from{
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  } to{
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+@keyframes spinRevert {
+  from{
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  } to{
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+/*========================MODAL======================*/
+.modal{
+  display:none;
+  position:absolute;
+  top:10%;
+  left:20%;
+  width:60%;
+  h1{
+    text-align:center;
+  }
+  div{
+    margin:2% 0% 0.2% 0%;
+    text-align:center;
+    img{
+      width:60%;
+      border-radius:12px;
+      
+    }
+  }
+  h2{
+    width:60%;
+    margin-left:30%;
+    margin: 1.5% auto 2% auto;
+    max-height:20vh;
+    overflow:scroll;
+    padding-left: 2%;
+  }
+ 
+
+}
+.buttonContainer{
+  margin:3% 0;
+  padding-top: 3%;
+}
+
+  
+  #gitButton{
+    text-decoration: none;
+    background:black;
+    color:white;
+    text-decoration:none;
+    background-image: url("../img/GitHub-Icon-White-Logo.wine.svg");
+    background-size: 40%;
+    background-position: left;
+    background-repeat: no-repeat;
+    border-radius:15px;
+    text-align:center;
+    width:10vw;
+    height:15vh;
+    margin-right: 3%;
+    padding:1.5% 1% 1% 6% ;
+    font-size:2em;
+    &:hover{
+      opacity:0.5;
+      
+    }
+  }
+  
+  #siteButton{
+    text-decoration: none;
+    background:rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+    text-decoration:none;
+    background-image: url("../img/WebsiteIcon.png");
+    background-size: 23%;
+    background-position: 10% 50%;
+    background-repeat: no-repeat;
+    border-radius:15px;
+    text-align:center;
+    width:10vw;
+    height:15vh;
+    padding:1% 2% 1% 5% ;
+    font-size:2em;
+    &:hover{
+      opacity:0.5;
+      
+    }
+  }
+  .closebtn {
+    text-decoration:none;
+    position: absolute;
+    top: -2%;
+    right: 14%;
+    font-size: 3em;
+    color: #ccc;
+  }
+/*==============================SCROLLBAR==========================*/
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+  border-radius:10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #10213000; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #10213000; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #10213000; 
+}
+//   ========================================================================
